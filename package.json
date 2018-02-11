@@ -1,0 +1,20 @@
+{
+  "name": "Hangman_Node_app",
+  "version": "1.0.0",
+  "description": "A Hangman game for the command line, using Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scorpiosoft/Hangman_Node_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scorpiosoft/Hangman_Node_app/issues"
+  },
+  "homepage": "https://github.com/scorpiosoft/Hangman_Node_app#readme"
+}
