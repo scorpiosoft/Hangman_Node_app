@@ -11,8 +11,7 @@ class Letter
   // return the letter if guessed, else underscore
   display()
   {
-    console.log(this.guessed);
-    if (this.guessed === true)
+    if (this.guessed)
       return this._the_letter;
     else
       return '_';

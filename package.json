@@ -16,5 +16,7 @@
   "bugs": {
     "url": "https://github.com/scorpiosoft/Hangman_Node_app/issues"
   },
-  "homepage": "https://github.com/scorpiosoft/Hangman_Node_app#readme"
+  "homepage": "https://github.com/scorpiosoft/Hangman_Node_app#readme",
+  "dependencies": {
+  }
 }
