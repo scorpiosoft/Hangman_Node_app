@@ -18,5 +18,6 @@
   },
   "homepage": "https://github.com/scorpiosoft/Hangman_Node_app#readme",
   "dependencies": {
+    "line-by-line": "^0.1.6"
   }
 }
