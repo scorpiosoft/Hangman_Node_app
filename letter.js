@@ -9,7 +9,7 @@ class Letter
   }
   // display method
   // return the letter if guessed, else underscore
-  display()
+  toString()
   {
     if (this.guessed)
       return this._the_letter;
@@ -50,12 +50,12 @@ module.exports = Letter;
 //
 
 // var too_long = new Letter('long');
-// console.log('display:', too_long.display(), too_long);
+// console.log('display:  ' + too_long + '\n', too_long);
 // console.log('');
 
 // var a = new Letter('a');
-// console.log('display:', a.display(), a);
+// console.log('display:  ' + a + '\n', a);
 // a.guess('b');
-// console.log('guess b, display:', a.display(), a);
+// console.log('guess b, display:  ' + a + '\n', a);
 // a.guess('a');
-// console.log('guess a, display:', a.display(), a);
+// console.log('guess a, display:  ' + a + '\n', a);

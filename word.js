@@ -21,12 +21,12 @@ class Word
   }
   // display method
   // return the word
-  display()
+  toString()
   {
     var out = '';
     for (var i = 0; i < this.the_word.length; ++i)
     {
-      out += this.the_word[i].display();
+      out += this.the_word[i] + ' ';
     }
     return out;
   }
@@ -53,15 +53,15 @@ module.exports = Word;
 // test statements
 //
 
-// var w = new Word('a word');
-// console.log('display:', w.display(), w);
-// w.guess('a');
-// console.log('guess a, display:', w.display(), w);
-// w.guess('d');
-// console.log('guess a, display:', w.display(), w);
-// w.guess('o');
-// console.log('guess a, display:', w.display(), w);
-// w.guess('w');
-// console.log('guess a, display:', w.display(), w);
-// w.guess('r');
-// console.log('guess a, display:', w.display(), w);
+var w = new Word('a word');
+console.log('display:  ' + w + '\n', w);
+w.guess('a');
+console.log('guess a, display:  ' + w + '\n', w);
+w.guess('d');
+console.log('guess a, display:  ' + w + '\n', w);
+w.guess('o');
+console.log('guess a, display:  ' + w + '\n', w);
+w.guess('w');
+console.log('guess a, display:  ' + w + '\n', w);
+w.guess('r');
+console.log('guess a, display:  ' + w + '\n', w);
