@@ -3,7 +3,7 @@ var Letter = require('./letter');
 // the Word class
 class Word
 {
-    // constructor method
+  // constructor method
   constructor(word)
   {
     this.the_word = [];
@@ -53,15 +53,15 @@ module.exports = Word;
 // test statements
 //
 
-var w = new Word('a word');
-console.log('display:  ' + w + '\n', w);
-w.guess('a');
-console.log('guess a, display:  ' + w + '\n', w);
-w.guess('d');
-console.log('guess a, display:  ' + w + '\n', w);
-w.guess('o');
-console.log('guess a, display:  ' + w + '\n', w);
-w.guess('w');
-console.log('guess a, display:  ' + w + '\n', w);
-w.guess('r');
-console.log('guess a, display:  ' + w + '\n', w);
+// var w = new Word('a word');
+// console.log('display:  ' + w + '\n', w);
+// w.guess('a');
+// console.log('guess a, display:  ' + w + '\n', w);
+// w.guess('d');
+// console.log('guess a, display:  ' + w + '\n', w);
+// w.guess('o');
+// console.log('guess a, display:  ' + w + '\n', w);
+// w.guess('w');
+// console.log('guess a, display:  ' + w + '\n', w);
+// w.guess('r');
+// console.log('guess a, display:  ' + w + '\n', w);
