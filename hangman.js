@@ -42,7 +42,7 @@ class Hangman
   // depends on inquirer delivering a string
   guess(c)
   {
-    console.log('Hangman:guess:', c);
+    // console.log('Hangman:guess:', c);
 
     var scratch = '';
     if (c.length > 1)
