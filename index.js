@@ -62,8 +62,8 @@ function prompt_start()
 function prompt_guess()
 {
   // only go while the word is not guessed
-  // if (hangman.started)
-  if (!hangman.word.guessed && hangman.started)
+  if (hangman.started)
+  // if (!hangman.word.guessed && hangman.started)
   {
     var guess_str = '';
     for (var i = 0; i < hangman.a_misses.length; ++i)
@@ -85,7 +85,6 @@ function prompt_guess()
       prompt_guess();
     });
   } else {
-    // hangman.end_game();
     prompt_start();
   }
 };

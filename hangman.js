@@ -27,12 +27,7 @@ class Hangman
     // the word to guess
     this.word = new Word(this.random_word());
   }
-  // method to end the current game
-  // end_game()
-  // {
-  //   this.started = false;
-  // }
-  // get a random word
+  // method to get a random word
   random_word()
   {
     var rnd = Math.floor(Math.random() * this.dictionary.length);
@@ -89,6 +84,10 @@ class Hangman
 } // end Hangman
 
 module.exports = Hangman;
+
+//
+// test statements
+//
 
 // var h = new Hangman(['frog','dog','cat']);
 // h.start_game();
