@@ -5,7 +5,10 @@ class Letter
   constructor(letter)
   {
     this.the_letter = letter;
-    this.guessed = false;
+    // guessed == 0, not guessed
+    // guessed == 1, freshly correct
+    // guessed >  1, old correct guess
+    this.guessed = 0;
   }
   // display method
   // return the letter if guessed, else underscore
@@ -20,8 +23,11 @@ class Letter
   // check argument vs the letter, set guessed true if a match
   guess(letter)
   {
+    // console.log('Letter:guess:  ' + this.the_letter);
+    if (this.guessed === 1)
+      this.guessed++; // ensure old correct guesses are marked as old
     if (letter === this.the_letter)
-      this.guessed = true;
+      this.guessed++;
     return this.guessed;
   }
   // setter method for the_letter

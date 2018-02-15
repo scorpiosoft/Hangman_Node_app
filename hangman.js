@@ -29,8 +29,6 @@ class Hangman
   // method to end the current game
   end_game()
   {
-      // if (!hangman.word.guessed || (hangman.misses < hangman.game_over))
-
     this.started = false;
   }
   // get a random word
@@ -43,6 +41,9 @@ class Hangman
   // depends on inquirer delivering a string
   guess(c)
   {
+    console.log('Hangman:guess:  ' + this.word);
+
+    var scratch = '';
     if (c.length > 1)
     {
       console.log("Please enter a single letter.  You entered [", c, "]");
@@ -53,29 +54,36 @@ class Hangman
       console.log("Please enter a letter.  You entered [", c, "]");
       return;
     }
-    this.word.guess(c);
-    // TODO - set started false when out of guesses
-  }
-  // method to do the actions when the player misses
-  miss(c)
-  {
-    // use jQuery to dynamically add the miss
-    var missed = $("<div>");
-    missed.addClass("mono float-left pr-3");
-    missed.text(c + " ");
-    Hangman.d_guesses.append(missed);
-    // increment miss count
-    this.cur_misses++;
-    // sanity check
-    if (this.cur_misses > this.game_over)
+    if (this.word.guess(c))
     {
-      alert("You are " + this.cur_misses + " times dead!");
-      this.cur_misses = this.game_over;
+      // a hit
+      scratch = this.a_hits.toString();
+      console.log('hits,', scratch);
+      // if a new hit, push it
+      if (!scratch.includes(c))
+        this.a_hits.push(c);
+    } else {
+      // a miss
+      scratch = this.a_misses.toString();
+      console.log('misses,', scratch);
+      // if a new miss, push it
+      if (!scratch.includes(c))
+      {
+        this.a_misses.push(c);
+        this.misses_remaining--;
+        if (this.misses_remaining <= 0)
+        {
+          console.log('\n\nY O U . L O S E\n\n');
+          this.started = false;
+        }
+      }
     }
-    this.set_gallows();
-    this.d_gallows.attr('src', this.cur_gallows);
-    this.play_sound(this.d_miss);
-  }
-}
+    if (this.word.guessed)
+    {
+      console.log('\n\nY O U . W I N\n\n');
+      this.started = false;
+    }
+  } // end guess
+} // end Hangman
 
 module.exports = Hangman;

@@ -34,16 +34,23 @@ class Word
   // check argument vs the word, set guessed letters
   guess(letter)
   {
-    // start out true
+    // console.log('Word:guess:  ' + this.the_word);
+    // the current letter's guess result
+    var this_guess;
+    // accumulate whether the curent guess is a new hit
+    var a_hit = false;
+    // accumulate whether the curent word is completely guessed
     var all_guessed = true;
     for (var i = 0; i < this.the_word.length; ++i)
     {
-      // &= will keep true if the letter guess is true, else will change to false
-      // once false, cannot be set true again
-      all_guessed &= this.the_word[i].guess(letter);
+      this_guess = this.the_word[i].guess(letter);
+      if (this_guess === 1)
+        a_hit = true;
+      if (this_guess === 0)
+        all_guessed = false;
     }
     this.guessed = all_guessed;
-    return this.guessed;
+    return a_hit;
   }
 }
 
