@@ -10,7 +10,7 @@ class Letter
     // guessed >  1, old correct guess
     this.guessed = 0;
   }
-  // display method
+  // toString method
   // return the letter if guessed, else underscore
   toString()
   {

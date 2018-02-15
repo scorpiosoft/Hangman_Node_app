@@ -61,18 +61,18 @@ function prompt_start()
 // function prompting for a new guess
 function prompt_guess()
 {
-  var guess_str = '';
-  for (var i = 0; i < hangman.a_misses.length; ++i)
-    guess_str += hangman.a_misses[i] + ' ';
-  // display the game state before the prompt
-  // console.log(hangman.word);
-  console.log('\n\nMisses before you lose:', hangman.misses_remaining);
-  console.log('Your misses:', guess_str);
-  console.log('\n   The word: ' + hangman.word + '\n');
   // only go while the word is not guessed
   // if (hangman.started)
   if (!hangman.word.guessed && hangman.started)
   {
+    var guess_str = '';
+    for (var i = 0; i < hangman.a_misses.length; ++i)
+      guess_str += hangman.a_misses[i] + ' ';
+    // display the game state before the prompt
+    // console.log(hangman.word);
+    console.log('\n\nMisses before you lose:', hangman.misses_remaining);
+    console.log('Your misses:', guess_str);
+    console.log('\n   The word: ' + hangman.word + '\n');
     inquirer.prompt([
       {
         name: "guess",
@@ -80,12 +80,12 @@ function prompt_guess()
       }
     ]).then(function(answer)
     {
-      hangman.word.guess(answer.guess);
+      hangman.guess(answer.guess);
       // recurse the prompt
       prompt_guess();
     });
   } else {
-    hangman.end_game();
+    // hangman.end_game();
     prompt_start();
   }
 };

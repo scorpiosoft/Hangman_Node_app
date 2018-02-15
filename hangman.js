@@ -28,10 +28,10 @@ class Hangman
     this.word = new Word(this.random_word());
   }
   // method to end the current game
-  end_game()
-  {
-    this.started = false;
-  }
+  // end_game()
+  // {
+  //   this.started = false;
+  // }
   // get a random word
   random_word()
   {
@@ -62,7 +62,7 @@ class Hangman
       // if a new hit, push it
       if (!scratch.includes(c))
         this.a_hits.push(c);
-      console.log('hits,', scratch);
+      // console.log('hits,', scratch);
     } else {
       // a miss
       scratch = this.a_misses.toString();
@@ -74,10 +74,11 @@ class Hangman
         if (this.misses_remaining <= 0)
         {
           console.log('\n\nY O U . L O S E\n\n');
+          console.log('The word was [', this.word.display(), ']\n\n');
           this.started = false;
         }
       }
-      console.log('misses,', scratch);
+      // console.log('misses,', scratch);
     }
     if (this.word.guessed)
     {

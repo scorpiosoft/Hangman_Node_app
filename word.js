@@ -19,7 +19,17 @@ class Word
     }
     this.guessed = false;
   }
-  // display method
+  // display method - for displaying the word when game is lost
+  display()
+  {
+    var out = '';
+    for (var i = 0; i < this.the_word.length; ++i)
+    {
+      out += this.the_word[i].the_letter;
+    }
+    return out;
+  }
+  // toString method
   // return the word
   toString()
   {
