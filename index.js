@@ -3,6 +3,7 @@ var LineByLineReader = require('line-by-line');
 var inquirer = require("inquirer");
 
 // an instance of Hangman
+// var hangman;
 var hangman = new Hangman();
 
 //

@@ -1,3 +1,4 @@
+"use strict";
 var Word = require('./word');
 var utility = require('./utility');
 
@@ -41,7 +42,7 @@ class Hangman
   // depends on inquirer delivering a string
   guess(c)
   {
-    console.log('Hangman:guess:  ' + this.word);
+    console.log('Hangman:guess:', c);
 
     var scratch = '';
     if (c.length > 1)
@@ -58,14 +59,13 @@ class Hangman
     {
       // a hit
       scratch = this.a_hits.toString();
-      console.log('hits,', scratch);
       // if a new hit, push it
       if (!scratch.includes(c))
         this.a_hits.push(c);
+      console.log('hits,', scratch);
     } else {
       // a miss
       scratch = this.a_misses.toString();
-      console.log('misses,', scratch);
       // if a new miss, push it
       if (!scratch.includes(c))
       {
@@ -77,6 +77,7 @@ class Hangman
           this.started = false;
         }
       }
+      console.log('misses,', scratch);
     }
     if (this.word.guessed)
     {
@@ -87,3 +88,10 @@ class Hangman
 } // end Hangman
 
 module.exports = Hangman;
+
+// var h = new Hangman(['frog','dog','cat']);
+// h.start_game();
+// h.guess('a');
+// h.guess('t');
+// h.guess('z');
+// console.log(h.word);
